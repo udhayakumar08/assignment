@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book</title>
+
+</head>
+<style>
+    .content{display:none}
+</style>
+
+
+<link rel="stylesheet" href="./styles.css">
+
+<body>
+
+    <nav>
+        <h1 class="headH1">book management </h1>
+        <ul>
+            <li> <a onclick="homeDisplay()">booklist </a></li>
+            <li> <a onclick=addbookdisplay() >addbook </a> </li>
+           
+        </ul>
+    </nav>
+
+    <div class="container">
+
+
+<div id="homeContent" class="c">
+
+
+
+        <form onsubmit=" search()" method="post">
+            <label for="">search by</label>
+            <select name="search" id="searchOptions" onclick="option()">
+
+                <option value="id">id</option>
+                <option value="title">title</option>
+                <option value="author">author</option>
+            </select>
+
+
+            
+            <input type="text" placeholder="seach" id="searchid" >
+            <!-- <input type="text" placeholder="search by book name" id="searchName" > -->
+            
+
+            <br>
+            <br>
+        </form>
+        <button class="showNsearchBtn" id="searchDetails" onclick="searchByDetails()">search</button>
+        
+        <button  class="showNsearchBtn"  id="reset" onclick="showall()">show all books</button>
+        <br>
+
+
+        <br>
+        <hr>
+        <br>
+        <p>welcome to the book management system</p>
+<br>
+<br>
+
+        <div>
+            <table class="table">
+                <tr>
+    
+                    <th>Id </th>
+                    <th>Book Name </th>
+                    <th>Author </th>
+                    <th>Price </th>
+                    <th>Rating</th>
+                    <th>description</th>
+                    <th>Actions</th>
+                </tr>
+                <tbody id="tbdy">
+    
+                </tbody>
+    
+            </table>
+
+        </div>
+       <br>
+
+
+
+    </div>
+
+
+
+
+    <div id="Addbookid" class="content">
+        <div class="data">
+            
+            <div class="addingTitle">
+                Adding new book
+    
+            </div>
+            <form class="formbox">
+                <div class="inputField">
+                    <label for="">id</label>
+                    <input type="text" class="input" id="newid123" placeholder="Enter id">
+                </div>
+                <div class="inputField">
+                    <label for="">Book Title</label>
+                    <input type="text" class="input" id="newtitle" placeholder="Enter title">
+
+                </div>
+                <div class="inputField">
+                    <label for="">Author Name</label>
+                    <input type="text" class="input" id="newauthor" placeholder="Enter author">
+
+                </div>
+                <div class="inputField">
+                    <label for="">Price</label>
+                    <input type="text" class="input" id="newprice" placeholder="Enter price">
+
+                </div>
+                <div class="inputField">
+                    <label for="">Rating</label>
+                    <input type="text" class="input" id="rating" placeholder="Enter rating">
+
+
+                </div>
+                <div class="inputField">
+                    <label for="" >Description</label>
+                    <!-- <input type="text" id="description" placeholder="Enter description"> -->
+                    <textarea class="input" name="" id="des" cols="20" rows="10"></textarea> <br>
+                </div>
+                
+            </form>
+            <button class="submitbutton" type="button" id="addnewbook" onclick="add()">submit</button>
+
+
+            <!-- <button id="addnew"></button> -->
+        </div>
+        <br>
+        <br>
+
+
+    </div>
+    
+</div>
+  <script>
+function homeDisplay(){
+
+    document.getElementById("homeContent").style.display="block";
+    document.getElementById("Addbookid").style.display="none";
+
+}
+function addbookdisplay(){
+
+document.getElementById("Addbookid").style.display="block";
+document.getElementById("homeContent").style.display="none";
+
+}
+
+  </script>
+    
+    <script src="./bookclass.js"> </script>
+
+</body>
+
+</html>
